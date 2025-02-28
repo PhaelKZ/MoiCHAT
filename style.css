@@ -1,0 +1,204 @@
+/* Paleta Drácula */
+:root {
+  --background: #282a36;
+  --current-line: #44475a;
+  --selection: #6272a4;
+  --foreground: #f8f8f2;
+  --comment: #6272a4;
+  --placeholder: #bfbfbf; /* Cor mais clara para placeholders */
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --purple: #bd93f9;
+  --red: #ff5555;
+  --yellow: #f1fa8c;
+}
+
+/* Reset e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Container principal */
+.container {
+  background: var(--current-line);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--selection);
+}
+
+/* Títulos */
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: var(--pink);
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background: var(--selection);
+  color: var(--foreground); /* Garante que o texto digitado seja branco */
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* Placeholder com cor mais clara */
+input::placeholder {
+  color: var(--placeholder);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Melhor visibilidade do texto digitado */
+input:focus,
+input:not(:placeholder-shown) {
+  color: var(--foreground); /* Mantém o texto branco */
+  background: var(--comment); /* Fica um pouco mais escuro ao focar */
+}
+
+/* Efeito ao focar no campo */
+input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+/* Botões */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background: var(--green);
+  color: var(--background);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--cyan);
+}
+
+/* Links */
+a {
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input, button {
+    font-size: 14px;
+  }
+}
+
+/* Estilos básicos */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #282a36; /* Cor de fundo Drácula */
+  color: #f8f8f2; /* Cor do texto Drácula */
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra superior */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #44475a; /* Fundo da barra superior */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+#search-bar {
+  background-color: #6272a4; /* Cor de fundo do campo de pesquisa */
+  color: #f8f8f2;
+  border: 1px solid #44475a;
+  padding: 5px 10px;
+  border-radius: 20px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+#search-btn {
+  background-color: #50fa7b; /* Botão de busca verde */
+  color: #282a36;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  background-color: #8be9fd;
+}
+
+/* Foto de perfil */
+.navbar-right .profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #8be9fd; /* Cor da borda do perfil */
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Feed */
+main {
+  padding: 20px;
+}
+
+.feed h2 {
+  color: #ff79c6; /* Cor para o título */
+}
